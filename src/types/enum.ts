@@ -1,0 +1,5 @@
+export enum Constants {
+  HANDLE_DATA = "HANDLE_DATA",
+  ADD_TOKEN = 'ADD_TOKEN',
+  REMOVE_TOKEN = 'REMOVE_TOKEN'
+}

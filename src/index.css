@@ -1,0 +1,197 @@
+body {
+  margin: 0;
+  font-family: "Fira Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e5e5e5;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Thin.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-ExtraLight.ttf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Light.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-ThinItalic.ttf");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-ExtraLightItalic.ttf");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-LightItalic.ttf");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-MediumItalic.ttf");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-SemiBoldItalic.ttf");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-BoldItalic.ttf");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-ExtraBoldItalic.ttf");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fira Sans", sans-serif;
+  src: url("./assets/fonts/FiraSans-BlackItalic.ttf");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+::-webkit-scrollbar {
+  border-radius: 25px;
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 25px;
+  background: #333131;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: #191919;
+}
+::-webkit-resizer {
+  border-radius: 25px;
+  background: #191919;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-color: #191919 #333131;
+}
+
+@keyframes shine {
+  10% {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+    transition-duration: 0.7s, 0.7s, 0.15s;
+    transition-timing-function: ease;
+  }
+  100% {
+    opacity: 0;
+    top: -30%;
+    left: -30%;
+    transition-property: left, top, opacity;
+  }
+}
