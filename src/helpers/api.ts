@@ -10,3 +10,9 @@ export const ApiUrl =
 
 export const bgLocalUri = `${ApiUrl}/winrate`;
 export const statusLocalUri = `${ApiUrl}/status`;
+export const jsonUri = `https://api.hearthstonejson.com/v1/latest/${process.env.REACT_APP_LOCALE.replace(
+  "_",
+  ""
+)}/cards.json`;
+export const getImageUri = (imageID: string) =>
+  `https://art.hearthstonejson.com/v1/orig/${imageID}.png`;

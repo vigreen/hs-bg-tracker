@@ -56,9 +56,14 @@ export interface BlizData {
   pageCount: number;
 }
 
+export interface InfoObject {
+  [id: number]: InfoJSON;
+}
+
 export interface BodyInterface {
   heroes: HeroData[];
   wr: BGWinRateData;
+  info: InfoObject;
 }
 
 export interface BodyStatusInterface {
@@ -66,6 +71,7 @@ export interface BodyStatusInterface {
   wr: BGWinRateData;
   status: StatusInfo;
   handleStatus: Function;
+  info: InfoObject;
 }
 
 export interface StatusInfo {
@@ -112,4 +118,22 @@ export interface CardInterface extends HeroData {
   showAnim?: boolean;
   editMode: boolean;
   onClick: Function;
+  stat: WinRateObject;
+  info: InfoJSON;
+  power: InfoJSON;
+}
+
+export interface InfoJSON {
+  battlegroundsHero?: boolean; // doesn't shown for skins
+  battlegroundsSkinParentId?: number; //alt hero id for skins
+  cardClass: string;
+  type: "HERO" | "HERO_POWER"; //for hero, skins and they power
+  dbfId: number; // hero id if it haven't battlegroundsSkinParentId
+  health?: number; //only for hero and skins
+  hideCost: boolean;
+  id: string; //image id
+  name: string; //hero or power name
+  set: string | "BATTLEGROUNDS"; //filter only "BATTLEGROUNDS";
+  text?: string; //only for passive effects
+  images: string[];
 }

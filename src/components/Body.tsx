@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import tw, { styled } from "twin.macro";
+import ReactTooltip from "react-tooltip";
 import { BodyStatusInterface, StatusInfo } from "../types/interfaces";
 import { useLoading } from "../helpers/loadingContext";
 import Card from "./Card";
@@ -63,6 +64,7 @@ export default function Body({
   wr,
   status,
   handleStatus,
+  info,
 }: BodyStatusInterface) {
   const { loading, handleLoading } = useLoading();
   const [checked, handleChecked] = useState(false);
@@ -73,7 +75,6 @@ export default function Body({
       handleLoading(false);
     }
   }, [loading]);
-  console.log("wr: ", wr, heroes, status);
 
   const cards = heroes.map((props, i) => {
     const show = showCard(props.id, filter, status);
@@ -107,6 +108,11 @@ export default function Body({
           handleLoading(false);
         });
     };
+    const heroInfo = info[props.id];
+    const powerID =
+      props.childIds.find(
+        (id) => info[id] !== undefined && info[id].type === "HERO_POWER"
+      ) || props.childIds[0];
     return (
       <Card
         key={props.id}
@@ -115,6 +121,9 @@ export default function Body({
         editMode={checked}
         showAnim={i % 3 === 1}
         onClick={onClick}
+        stat={wr[props.id]}
+        info={heroInfo}
+        power={props.id === 60211 ? info[60450] : info[powerID]}
       />
     );
   });
@@ -153,6 +162,14 @@ export default function Body({
           </div>
         )}
         <HeroesGrid>{cards}</HeroesGrid>
+        <ReactTooltip
+          id="custom-tooltip"
+          className="custom-tooltip"
+          delayHide={1000}
+          textColor="#fff"
+          backgroundColor="#000"
+          effect="solid"
+        />
       </ScrollWrap>
     </BodyWrap>
   );
