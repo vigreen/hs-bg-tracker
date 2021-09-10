@@ -15,7 +15,6 @@ module.exports = (port = 5000) => new Promise((resolve, reject) => {
   app.use('/api', routers);
 
   app.get('/', (req, res) => {
-    //res.send(path.join(publicDir, 'index.html'))
     res.sendFile(path.join(publicDir, 'index.html'));
   })
 

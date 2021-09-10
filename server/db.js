@@ -11,7 +11,7 @@ const Database = require('better-sqlite3');
 const dbName = path.join(dir, 'heroes.db');
 const createTable = "CREATE TABLE IF NOT EXISTS hero_status ('hero_id' int PRIMARY KEY, 'status' INT );"
 
-const db = new Database(dbName, { verbose: console.log });
+const db = new Database(dbName);
 db.exec(createTable);
 
 const insert = db.prepare('REPLACE INTO hero_status (hero_id, status) VALUES (@hero_id, @status)');

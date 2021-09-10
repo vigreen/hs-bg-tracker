@@ -4,25 +4,23 @@ const startElectronApp = async () => {
   const electron = require('electron');
   const { BrowserWindow, app } = electron;
   let mainWindow;
-  const reactServer = require('./server/index.js');
+  const server = require('./server/express.js');
+  app.allowRendererProcessReuse = true;
 
+  async function createWindow() {
+    await server(5000);
 
-  //const msg = await reactServer();
-  //console.log(msg)
-
-  function createWindow() {
     mainWindow = new BrowserWindow({
       width: 1400,
       height: 800,
+      autoHideMenuBar: true,
       webPreferences: {
         nodeIntegration: true,
-      }
+      },
+      icon: path.join(__dirname, 'public', 'logo.png')
     });
 
-    mainWindow.loadURL('http://localhost:3000/');
-    // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
-
+    mainWindow.loadURL('http://localhost:5000/');
 
     mainWindow.on('closed', function () {
       mainWindow = null;

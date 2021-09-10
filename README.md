@@ -1,3 +1,5 @@
-1a. yarn build
-1b. yarn server
-2. yarn start
+> ## Developing
+>
+> - npm i
+> - npm run rebuild
+> - npm run app

@@ -111,5 +111,5 @@ export interface CardInterface extends HeroData {
   hidden?: boolean;
   showAnim?: boolean;
   editMode: boolean;
-  onClick: MouseEventHandler;
+  onClick: Function;
 }
